@@ -141,7 +141,7 @@ const AdminFeedback: React.FC = () => {
         <button
           type="submit"
           disabled={loading}
-          className="bg-[#fdbe1b] hover:bg-[#E63946] text-white px-4 py-2 rounded-md font-medium transition disabled:opacity-50 text-sm" style={{fontFamily:"DM Sans"}}
+          className="bg-[#fdbe1b] hover:bg-[#18223d] text-white px-4 py-2 rounded-md font-medium transition disabled:opacity-50 text-sm" style={{fontFamily:"DM Sans"}}
         >
           {loading ? "Sending..." : "Send Feedback"}
         </button>

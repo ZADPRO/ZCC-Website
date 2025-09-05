@@ -174,7 +174,7 @@
     <div className="mt-8 flex items-center justify-center gap-4">
       <Link
         to="/contact"
-        className="inline-block bg-[#fdbe1b] hover:bg-[#a91632] text-white font-semibold px-6 py-3 rounded-md shadow-lg transition"
+        className="inline-block bg-[#fdbe1b] hover:bg-[#18223d] text-white font-semibold px-6 py-3 rounded-md shadow-lg transition"
         aria-label="Book Ground Now"
       >
         Book Now
@@ -393,18 +393,18 @@
 >
   {/* 🔹 Background */}
   <div
-    className="absolute inset-0 bg-cover bg-center blur-sm"
+    className="absolute inset-0 bg-cover bg-center blur-sm "
     style={{ backgroundImage: `url(${bgImage})` }}
   ></div>
   <div className="absolute inset-0 bg-black/30"></div>
 
   {/* 🔹 Content */}
-  <div className="relative z-10 max-w-6xl mx-auto" >
-    <h2 className="text-2xl font-semibold text-center mb-6 text-[#090a58]" style={{fontFamily:"DM Sans"}}>
+  <div className="relative z-10 max-w-6xl m-6 mx-auto" >
+    <h2 className="text-2xl font-bold text-center m-6 text-white" style={{fontFamily:"DM Sans"}}>
       Contact Us
     </h2>
 
-    <div className="flex flex-col md:flex-row items-stretch gap-6">
+    <div className="flex flex-col md:flex-row items-stretch gap-0">
       {/* Left Side Image */}
       <motion.div
         className="flex-shrink-0 w-full md:w-[40%] flex"
@@ -422,7 +422,7 @@
       {/* Contact Form */}
       <motion.form
         onSubmit={handleSubmit}
-        className="flex-1 bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between h-[400px]"
+        className="flex-1 bg-white rounded-r-lg shadow-lg p-6 flex flex-col justify-between h-[400px]"
         noValidate
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -515,7 +515,7 @@
             type="submit"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#fdbe1b] hover:bg-[#a91632] text-white px-6 py-2 rounded-md text-sm font-semibold transition duration-300" style={{fontFamily:"DM Sans"}}
+            className="bg-[#fdbe1b] hover:bg-[#18223d] text-white px-6 py-2 rounded-md text-sm font-semibold transition duration-300" style={{fontFamily:"DM Sans"}}
           >
             Send Message
           </motion.button>

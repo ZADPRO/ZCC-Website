@@ -52,7 +52,7 @@ const AchievementView: React.FC = () => {
               navigate(-1);
               window.scrollTo(0, 0);
             }}
-            className="bg-[#fdbe1b] text-white px-5 py-2 rounded-full hover:bg-[#E63946] transition duration-300"
+            className="bg-[#fdbe1b] text-white px-5 py-2 rounded-full hover:bg-[#18223d] transition duration-300"
           >
             Back to Achievements
           </button>

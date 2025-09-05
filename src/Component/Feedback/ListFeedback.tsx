@@ -75,9 +75,9 @@ const ListFeedback: React.FC = () => {
   return (
     <div className="bg-white p-6 rounded-xl shadow-md">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-semibold text-center mb-10 underline text-slate-900" style={{fontFamily:"DM Sans"}}>
+        {/* <h1 className="text-3xl font-semibold text-center mb-10 underline text-slate-900" style={{fontFamily:"DM Sans"}}>
           User Reviews
-        </h1>
+        </h1> */}
 
         {/* ✅ Show 4 cards per row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -130,7 +130,7 @@ const ListFeedback: React.FC = () => {
         {listFeedback.length > 4 && (
           <div className="flex justify-center mt-10">
             <button
-              className="px-7 py-3 bg-[#fdbe1b] font-bold text-white rounded-full hover:bg-[#E63946] transition"
+              className="px-7 py-3 bg-[#fdbe1b] font-bold text-white rounded-full hover:bg-[#18223d] transition"
               onClick={() =>
                 visibleCount === 4
                   ? setVisibleCount(listFeedback.length)

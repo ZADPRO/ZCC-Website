@@ -91,7 +91,7 @@ const BlogsPreview: React.FC = () => {
               alt={blog.blogTitle}
               className="w-full h-48 object-cover rounded mb-4"
             />
-            <div className="flex flex-row w-full justify-between">
+            {/* <div className="flex flex-row w-full justify-between">
               <h2 className="text-xl font-semibold mb-2 text-slate-900" style={{fontFamily:"DM Sans"}}>
                 {blog.blogTitle}
               </h2>
@@ -102,7 +102,27 @@ const BlogsPreview: React.FC = () => {
                   year: "numeric",
                 })}
               </p>
-            </div>
+            </div> */}
+            <div className="flex flex-row w-full justify-between items-start gap-2">
+  <h2
+    className="text-lg sm:text-xl font-semibold text-slate-900 leading-snug max-w-[70%] truncate"
+    style={{ fontFamily: "DM Sans" }}
+    title={blog.blogTitle} // shows full title on hover
+  >
+    {blog.blogTitle}
+  </h2>
+  <p
+    className="text-xs sm:text-sm text-gray-500 whitespace-nowrap"
+    style={{ fontFamily: "DM Sans" }}
+  >
+    {new Date(blog.blogDate).toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    })}
+  </p>
+</div>
+
 
             {/* Read More link at bottom-right */}
             <div className="flex justify-end w-full mt-4">
@@ -133,7 +153,7 @@ const BlogsPreview: React.FC = () => {
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => navigate("/blogs-all")}
-          className="bg-[#fdbe1b] hover:bg-[#a91632] text-white px-6 py-3 rounded-full font-semibold transition"
+          className="bg-[#fdbe1b] hover:bg-[#18223d] text-white px-6 py-3 rounded-full font-semibold transition"
         >
           View All Blogs
         </motion.button>

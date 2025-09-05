@@ -93,7 +93,7 @@ const BlogView: React.FC = () => {
         <div className="text-center mt-8">
           <button
             onClick={() => navigate(-1)}
-            className="bg-[#fdbe1b] hover:bg-[#a91632] text-white px-6 py-3 rounded-full font-semibold transition" style={{fontFamily:"DM Sans"}}
+            className="bg-[#fdbe1b] hover:bg-[#18223d] text-white px-6 py-3 rounded-full font-semibold transition" style={{fontFamily:"DM Sans"}}
           >
             Back to Blogs
           </button>

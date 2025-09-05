@@ -139,7 +139,7 @@ const Achievements: React.FC = () => {
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => navigate("/achievements-all")}
-          className="bg-[#fdbe1b] hover:bg-[#E63946] text-white px-6 py-3 rounded-full font-semibold transition"
+          className="bg-[#fdbe1b] hover:bg-[#18223d] text-white px-6 py-3 rounded-full font-semibold transition"
         >
           View All Achievements
         </motion.button>

@@ -94,8 +94,8 @@ const Header: React.FC = () => {
                 <button
                   onClick={() => handleNavClick(link)}
                   className={`transition-colors duration-200 ${activeTab === link.to
-                    ? "text-[#d9a477]"
-                    : "text-white hover:text-[#d9a477]"
+                    ? "text-[#fdbe1b]"
+                    : "text-white hover:text-[#fdbe1b]"
                     }`}
                 >
                   {link.label}

@@ -20,7 +20,7 @@ const Feedback: React.FC = () => {
           <div className="flex justify-center mt-10">
             <button
               onClick={() => setIsOpen(true)}
-              className="px-6 py-3 bg-[#fdbe1b] text-white rounded-md hover:bg-[#E63946] transition" style={{fontFamily:"DM Sans"}}
+              className="px-6 py-3 bg-[#fdbe1b] text-white rounded-md hover:bg-[#18223d] transition" style={{fontFamily:"DM Sans"}}
             >
               Share Your Feedback
             </button>
