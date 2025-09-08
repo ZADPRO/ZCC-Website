@@ -20,6 +20,7 @@ interface FeedbackListResponse {
 const ListFeedback: React.FC = () => {
   const [listFeedback, setListFeedback] = useState<Feedback[]>([]);
   const [visibleCount, setVisibleCount] = useState(4); // ✅ show 4 cards initially
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const fetchFeedback = () => {
     axios
@@ -115,12 +116,22 @@ const ListFeedback: React.FC = () => {
     </div>
 
     {/* Message */}
-    <p
+    {/* <p
       className="text-gray-600 text-sm line-clamp-2"
       title={stripHtmlTags(feedback.reviewContent)}
     >
       {stripHtmlTags(feedback.reviewContent)}
-    </p>
+    </p> */}
+    <p
+  className={`text-gray-600 text-sm ${
+    expandedIndex === index ? "" : "line-clamp-2"
+  }`}
+  onClick={() =>
+    setExpandedIndex(expandedIndex === index ? null : index)
+  }
+>
+  {stripHtmlTags(feedback.reviewContent)}
+</p>
   </div>
 ))}
 
