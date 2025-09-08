@@ -11,7 +11,7 @@ interface AddReviewResponse {
 
 const AdminFeedback: React.FC = () => {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(""); // optional
   const [message, setMessage] = useState("");
   const [rating, setRating] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -25,7 +25,7 @@ const AdminFeedback: React.FC = () => {
         {
           refProductName: import.meta.env.VITE_PRODUCT_NAME,
           userName: name,
-          userEmail: email,
+          userEmail: email || "", // ✅ send empty string if skipped
           reviewContent: message,
           ratings: rating.toString(),
         },
@@ -38,13 +38,15 @@ const AdminFeedback: React.FC = () => {
           import.meta.env.VITE_ENCRYPTION_KEY
         );
 
-        console.log('AdminFeedback.tsx / data / 41 -------------------  ', data);
         if (data.success) {
           setSuccessMsg("✅ Thank you! Your feedback has been submitted.");
           setName("");
           setEmail("");
           setMessage("");
           setRating(0);
+
+          // trigger reload in list
+          window.dispatchEvent(new Event("feedback-updated"));
         } else {
           setErrorMsg(data.message || "Something went wrong. Please try again.");
         }
@@ -57,8 +59,9 @@ const AdminFeedback: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !email || !message || rating === 0) {
-      setErrorMsg("⚠️ Please fill all fields and provide a rating.");
+    // ✅ Name, Message, Rating required; Email optional
+    if (!name || !message || rating === 0) {
+      setErrorMsg("⚠️ Please fill Name, Message, and Rating.");
       return;
     }
     setLoading(true);
@@ -69,14 +72,21 @@ const AdminFeedback: React.FC = () => {
 
   return (
     <div className="bg-white rounded-lg p-4 w-full">
-      <h2 className="text-lg font-semibold text-gray-800 mb-4 border-l-4 border-[#090a58] pl-3" style={{fontFamily:"DM Sans"}}>
+      <h2
+        className="text-lg font-semibold text-gray-800 mb-4 border-l-4 border-[#090a58] pl-3"
+        style={{ fontFamily: "DM Sans" }}
+      >
         Tell us what you think
       </h2>
 
       <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
+        {/* Name */}
         <div>
-          <label className="block mb-1 text-gray-700 text-sm font-medium" style={{fontFamily:"DM Sans"}}>
-            Name
+          <label
+            className="block mb-1 text-gray-700 text-sm font-medium"
+            style={{ fontFamily: "DM Sans" }}
+          >
+            Name *
           </label>
           <input
             type="text"
@@ -87,22 +97,30 @@ const AdminFeedback: React.FC = () => {
           />
         </div>
 
+        {/* Email (Optional) */}
         <div>
-          <label className="block mb-1 text-gray-700 text-sm font-medium" style={{fontFamily:"DM Sans"}}>
+          <label
+            className="block mb-1 text-gray-700 text-sm font-medium"
+            style={{ fontFamily: "DM Sans" }}
+          >
             Email
           </label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
+            placeholder="Enter your email (optional)"
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#090a58] text-sm"
           />
         </div>
 
+        {/* Rating */}
         <div>
-          <label className="block mb-1 text-gray-700 text-sm font-medium" style={{fontFamily:"DM Sans"}}>
-            Your Rating
+          <label
+            className="block mb-1 text-gray-700 text-sm font-medium"
+            style={{ fontFamily: "DM Sans" }}
+          >
+            Your Rating *
           </label>
           <div className="flex space-x-1">
             {[1, 2, 3, 4, 5].map((star) => (
@@ -118,9 +136,13 @@ const AdminFeedback: React.FC = () => {
           </div>
         </div>
 
+        {/* Message */}
         <div>
-          <label className="block mb-1 text-gray-700 text-sm font-medium" style={{fontFamily:"DM Sans"}}>
-            Message
+          <label
+            className="block mb-1 text-gray-700 text-sm font-medium"
+            style={{ fontFamily: "DM Sans" }}
+          >
+            Message *
           </label>
           <textarea
             rows={3}
@@ -131,6 +153,7 @@ const AdminFeedback: React.FC = () => {
           ></textarea>
         </div>
 
+        {/* Error / Success */}
         {errorMsg && (
           <div className="text-red-600 text-sm font-medium">{errorMsg}</div>
         )}
@@ -138,10 +161,12 @@ const AdminFeedback: React.FC = () => {
           <div className="text-green-600 text-sm font-medium">{successMsg}</div>
         )}
 
+        {/* Submit Button */}
         <button
           type="submit"
           disabled={loading}
-          className="bg-[#fdbe1b] hover:bg-[#18223d] text-white px-4 py-2 rounded-md font-medium transition disabled:opacity-50 text-sm" style={{fontFamily:"DM Sans"}}
+          className="bg-[#fdbe1b] hover:bg-[#18223d] text-white px-4 py-2 rounded-md font-medium transition disabled:opacity-50 text-sm"
+          style={{ fontFamily: "DM Sans" }}
         >
           {loading ? "Sending..." : "Send Feedback"}
         </button>

@@ -8,7 +8,7 @@ import user from "../../assets/User.png";
 interface Feedback {
   reviewContent: string;
   ratings: string;
-  userEmail: string;
+  userEmail?: string; // email optional
   userName: string;
 }
 
@@ -19,7 +19,7 @@ interface FeedbackListResponse {
 
 const ListFeedback: React.FC = () => {
   const [listFeedback, setListFeedback] = useState<Feedback[]>([]);
-  const [visibleCount, setVisibleCount] = useState(4); // ✅ show 4 cards initially
+  const [visibleCount, setVisibleCount] = useState(4);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const fetchFeedback = () => {
@@ -68,7 +68,9 @@ const ListFeedback: React.FC = () => {
     return Array.from({ length: 5 }, (_, i) => (
       <FaStar
         key={i}
-        className={`w-5 h-5 ${i < ratingNum ? "text-yellow-400" : "text-gray-300"}`}
+        className={`w-5 h-5 ${
+          i < ratingNum ? "text-yellow-400" : "text-gray-300"
+        }`}
       />
     ));
   };
@@ -76,65 +78,48 @@ const ListFeedback: React.FC = () => {
   return (
     <div className="bg-white p-6 rounded-xl shadow-md">
       <div className="max-w-6xl mx-auto">
-        {/* <h1 className="text-3xl font-semibold text-center mb-10 underline text-slate-900" style={{fontFamily:"DM Sans"}}>
-          User Reviews
-        </h1> */}
-
         {/* ✅ Show 4 cards per row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {displayedFeedback.map((feedback, index) => (
-  <div
-    key={index}
-    className="relative bg-white p-6 border-2 border-blue-100 rounded-xl shadow hover:shadow-md transition"
-  >
-    {/* Profile Logo (fixed top-right) */}
-    <img
-      src={user}
-      alt="Profile"
-      className="w-8 h-8 absolute top-4 right-4"
-    />
+          {displayedFeedback.map((feedback, index) => (
+            <div
+              key={index}
+              className="relative bg-white p-6 border-2 border-blue-100 rounded-xl shadow hover:shadow-md transition"
+            >
+              {/* Profile Logo */}
+              <img
+                src={user}
+                alt="Profile"
+                className="w-8 h-8 absolute top-4 right-4"
+              />
 
-    {/* Name + Email */}
-    <div className="mb-3 pr-10"> {/* padding-right so text doesn’t overlap logo */}
-      <h2
-        className="font-semibold text-lg truncate"
-        title={feedback.userName}
-      >
-        {feedback.userName}
-      </h2>
-      <p
-        className="text-sm text-gray-500 truncate"
-        title={feedback.userEmail}
-      >
-        {feedback.userEmail}
-      </p>
-    </div>
+              {/* Name only (NO email) */}
+              <div className="mb-3 pr-10">
+                <h2
+                  className="font-semibold text-lg truncate"
+                  title={feedback.userName}
+                >
+                  {feedback.userName}
+                </h2>
+              </div>
 
-    {/* Stars */}
-    <div className="flex items-center mb-2">
-      {renderStars(feedback.ratings)}
-    </div>
+              {/* Stars */}
+              <div className="flex items-center mb-2">
+                {renderStars(feedback.ratings)}
+              </div>
 
-    {/* Message */}
-    {/* <p
-      className="text-gray-600 text-sm line-clamp-2"
-      title={stripHtmlTags(feedback.reviewContent)}
-    >
-      {stripHtmlTags(feedback.reviewContent)}
-    </p> */}
-    <p
-  className={`text-gray-600 text-sm ${
-    expandedIndex === index ? "" : "line-clamp-2"
-  }`}
-  onClick={() =>
-    setExpandedIndex(expandedIndex === index ? null : index)
-  }
->
-  {stripHtmlTags(feedback.reviewContent)}
-</p>
-  </div>
-))}
-
+              {/* Message */}
+              <p
+                className={`text-gray-600 text-sm ${
+                  expandedIndex === index ? "" : "line-clamp-2"
+                }`}
+                onClick={() =>
+                  setExpandedIndex(expandedIndex === index ? null : index)
+                }
+              >
+                {stripHtmlTags(feedback.reviewContent)}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* ✅ View More / View Less button */}

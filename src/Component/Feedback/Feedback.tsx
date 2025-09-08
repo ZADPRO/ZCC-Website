@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import AdminFeedback from "./AdminFeedback";
 import ListFeedback from "./ListFeedback";
@@ -9,7 +10,10 @@ const Feedback: React.FC = () => {
     <div className="">
       <section id="feedback" className="scroll-mt-50">
         <div className="px-6 py-30 bg-blue-50 ">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-[#fdbe1b]" style={{fontFamily:"DM Sans"}}>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-center mb-10 text-[#fdbe1b]"
+            style={{ fontFamily: "DM Sans" }}
+          >
             Feedback
           </h2>
 
@@ -20,7 +24,8 @@ const Feedback: React.FC = () => {
           <div className="flex justify-center mt-10">
             <button
               onClick={() => setIsOpen(true)}
-              className="px-6 py-3 bg-[#fdbe1b] text-white rounded-md hover:bg-[#18223d] transition" style={{fontFamily:"DM Sans"}}
+              className="px-6 py-3 bg-[#fdbe1b] text-white rounded-md hover:bg-[#18223d] transition"
+              style={{ fontFamily: "DM Sans" }}
             >
               Share Your Feedback
             </button>

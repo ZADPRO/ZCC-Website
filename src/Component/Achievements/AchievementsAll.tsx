@@ -65,22 +65,28 @@ const AchievementsAll: React.FC = () => {
               navigate("/achievement-view", { state: { achievement } })
             }
           >
-            <div className="flex justify-between items-center mb-3">
-              <h3
-                className="font-semibold text-lg truncate" 
-                title={achievement.achievementTitle}
-              >
-                {achievement.achievementTitle}
-              </h3>
-              <p className="text-sm text-gray-500">{achievement.achievedOn}</p>
-            </div>
-            <p className="text-gray-600 text-sm line-clamp-3">
-              {stripHtmlTags(achievement.achievementDescription).length > 100
-                ? `${stripHtmlTags(
-                    achievement.achievementDescription
-                  ).slice(0, 100)}...`
-                : stripHtmlTags(achievement.achievementDescription)}
-            </p>
+            <div className="flex justify-between items-center mb-3 gap-2">
+  <h3
+    className="font-semibold text-lg leading-snug max-w-[70%] truncate"
+    style={{ fontFamily: "DM Sans" }}
+    title={achievement.achievementTitle} // full title on hover
+  >
+    {achievement.achievementTitle}
+  </h3>
+  <p
+    className="text-sm text-gray-500 whitespace-nowrap"
+    style={{ fontFamily: "DM Sans" }}
+  >
+    {achievement.achievedOn}
+  </p>
+</div>
+
+<p className="text-gray-600 text-sm line-clamp-2" style={{ fontFamily: "DM Sans" }}>
+  {stripHtmlTags(achievement.achievementDescription).length > 100
+    ? `${stripHtmlTags(achievement.achievementDescription).slice(0, 100)}...`
+    : stripHtmlTags(achievement.achievementDescription)}
+</p>
+
           </div>
         ))}
       </div>

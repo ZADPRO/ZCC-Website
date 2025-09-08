@@ -108,7 +108,7 @@ const Achievements: React.FC = () => {
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 150, damping: 12 }}
           >
-            <div className="flex justify-between items-center mb-3">
+            {/* <div className="flex justify-between items-center mb-3">
               <h3
                 className="font-semibold text-lg truncate" style={{fontFamily:"DM Sans"}}
                 title={achievement.achievementTitle}
@@ -116,8 +116,24 @@ const Achievements: React.FC = () => {
                 {achievement.achievementTitle}
               </h3>
               <p className="text-sm text-gray-500" style={{fontFamily:"DM Sans"}}>{achievement.achievedOn}</p>
-            </div>
-            <p className="text-gray-600 text-sm line-clamp-3" style={{fontFamily:"DM Sans"}}>
+            </div> */}
+            <div className="flex justify-between items-center mb-3 gap-2">
+  <h3
+    className="font-semibold text-lg leading-snug max-w-[70%] truncate"
+    style={{ fontFamily: "DM Sans" }}
+    title={achievement.achievementTitle} // full title on hover
+  >
+    {achievement.achievementTitle}
+  </h3>
+  <p
+    className="text-sm text-gray-500 whitespace-nowrap"
+    style={{ fontFamily: "DM Sans" }}
+  >
+    {achievement.achievedOn}
+  </p>
+</div>
+
+            <p className="text-gray-600 text-sm line-clamp-2" style={{fontFamily:"DM Sans"}}>
               {stripHtmlTags(achievement.achievementDescription).length > 100
                 ? `${stripHtmlTags(
                     achievement.achievementDescription
