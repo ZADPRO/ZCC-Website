@@ -54,48 +54,54 @@ const AchievementsAll: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8 mt-20">
-      <div className="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="min-h-screen bg-gray-100 p-6 sm:p-8 mt-20">
+      <div className="max-w-5xl mx-auto grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {listAchievements.map((achievement, index) => (
           <div
             key={index}
-            // className="bg-white rounded-lg shadow p-6 border-l-4 border-[#2d1487] hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out text-left cursor-pointer"
-            className="bg-white rounded-lg shadow p-6 hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out text-left cursor-pointer"
+            className="bg-white rounded-lg shadow p-4 sm:p-5 hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out w-[90%] max-w-xs mx-auto text-left cursor-pointer"
             onClick={() =>
               navigate("/achievement-view", { state: { achievement } })
             }
           >
-            <div className="flex justify-between items-center mb-3 gap-2">
-  <h3
-    className="font-semibold text-lg leading-snug max-w-[70%] truncate"
-    style={{ fontFamily: "DM Sans" }}
-    title={achievement.achievementTitle} // full title on hover
-  >
-    {achievement.achievementTitle}
-  </h3>
-  <p
-    className="text-sm text-gray-500 whitespace-nowrap"
-    style={{ fontFamily: "DM Sans" }}
-  >
-    {achievement.achievedOn}
-  </p>
-</div>
+            {/* Title + Date */}
+            <div className="flex justify-between items-center mb-2 gap-2">
+              <h3
+                className="font-semibold text-sm sm:text-base leading-snug max-w-[70%] truncate"
+                style={{ fontFamily: "DM Sans" }}
+                title={achievement.achievementTitle}
+              >
+                {achievement.achievementTitle}
+              </h3>
+              <p
+                className="text-xs sm:text-sm text-gray-500 whitespace-nowrap"
+                style={{ fontFamily: "DM Sans" }}
+              >
+                {achievement.achievedOn}
+              </p>
+            </div>
 
-<p className="text-gray-600 text-sm line-clamp-2" style={{ fontFamily: "DM Sans" }}>
-  {stripHtmlTags(achievement.achievementDescription).length > 100
-    ? `${stripHtmlTags(achievement.achievementDescription).slice(0, 100)}...`
-    : stripHtmlTags(achievement.achievementDescription)}
-</p>
-
+            {/* Description */}
+            <p
+              className="text-gray-600 text-xs sm:text-sm line-clamp-2"
+              style={{ fontFamily: "DM Sans" }}
+            >
+              {stripHtmlTags(achievement.achievementDescription).length > 100
+                ? `${stripHtmlTags(achievement.achievementDescription).slice(
+                    0,
+                    100
+                  )}...`
+                : stripHtmlTags(achievement.achievementDescription)}
+            </p>
           </div>
         ))}
       </div>
 
       {/* ✅ Back to Achievements Button */}
-      <div className="text-center mt-12">
+      <div className="text-center mt-10">
         <button
           onClick={() => navigate("/achievements")}
-          className="bg-[#fdbe1b] hover:bg-[#18223d] text-white px-6 py-3 rounded-full font-semibold transition"
+          className="bg-[#fdbe1b] hover:bg-[#18223d] text-white px-5 py-2.5 rounded-full font-semibold text-sm sm:text-base transition"
         >
           Back to Home
         </button>
