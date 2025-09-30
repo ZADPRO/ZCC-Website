@@ -25,18 +25,18 @@ const Mainroutes: React.FC = () => {
                     <Route path="/about" element={<Home />} />
                     <Route path="/services" element={<Home />} />
                     <Route path="/blogs" element={<Home />} />
-                     {/* <Route path="/blog-view" element={<BlogView />} /> */}
-                     <Route path="/blog-view/:id/:title" element={<BlogView />} />
+                    {/* <Route path="/blog-view" element={<BlogView />} /> */}
+                    <Route path="/blog-view/:id/:title" element={<BlogView />} />
 
 
-                     <Route path="/blogs-all" element={<BlogsAll />} />
+                    <Route path="/blogs-all" element={<BlogsAll />} />
                     <Route path="/achievements" element={<Home />} />
-                    <Route path="/feedback" element={<Feedback/>} />
-                     <Route path="/achievements-all" element={<AchievementsAll />} />
-                     <Route path="/achievement-view" element={<AchievementView />} />
+                    <Route path="/feedback" element={<Feedback />} />
+                    <Route path="/achievements-all" element={<AchievementsAll />} />
+                    <Route path="/achievement-view" element={<AchievementView />} />
                     <Route path="/contact" element={<Home />} />
-                    
-                   {/* <Route path="/achievement-view" element={<AchievementView />} /> */}
+
+                    {/* <Route path="/achievement-view" element={<AchievementView />} /> */}
 
                 </Routes>
             </main>
