@@ -309,13 +309,16 @@ const Home: React.FC = () => {
             >
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4" style={{ fontFamily: "DM Sans" }}>About Us</h2>
               <p className="text-lg text-slate-700 mb-6 leading-relaxed text-justify" style={{ fontFamily: "DM Sans" }}>
-                Zadby Cricket Club (ZCC) has been established to support players, academies, schools, and sports
-                organizers by offering a professional and reliable sports environment.
-                All ground bookings and tournament arrangements are efficiently managed through the ZadSports App,
-                ensuring a seamless experience from planning to execution.
-                ZCC is located at ARRS Academy School in Salem and has proudly hosted numerous youth and
+                {/* Zadby Cricket Club (ZCC) has been established to support players, academies, schools, and sports
+                organizers by offering a professional and reliable sports environment. */}
+                Welcome to Zadby Cricket Club your premier destination for cricket tournament venues, turf grounds, and full scale cricket ground booking services. Whether you’re organizing a female cricket tournament, seeking a cricket ground for rent, or looking for the best cricket academy near me, ZadBy has the facilities and support you need.<br></br><br></br>  
+                {/* All ground bookings and tournament arrangements are efficiently managed through the ZadSports App,
+                ensuring a seamless experience from planning to execution. */}
+                {/* At ZCC, we believe cricket is more than a sport it’s a community. Based in Salem, we offer state-of-the-art cricket infrastructure that supports matches, Tournaments and events. Our mission is to be the go-to name for cricket ground booking, cricket tournament hosting, and nurturing talent through academies. <br></br>  */}
+                {/* ZCC is located at ARRS Academy School in Salem and has proudly hosted numerous youth and
                 women’s cricket tournaments. We are committed to promoting grassroots talent and fostering the
-                growth of organized sports.
+                growth of organized sports. */}
+                Book your slot now the cricket ground near me you’ve been searching for is right here. 
               </p>
 
               <div className="mt-6 flex flex-wrap gap-6">
@@ -373,6 +376,7 @@ const Home: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-bold  mb-4 text-[#fdbe1b]" style={{ fontFamily: "DM Sans" }}>Our Services</h2>
           <p className="text-lg text-gray-600" style={{ fontFamily: "DM Sans" }}>
             We provide complete cricket ground facilities for players, teams, and corporate tournaments.
+            {/* Looking for a cricket ground for rent? Our facility is ideal for both casual matches and competitive cricket tournaments. With flexible booking options, you can reserve by hour, half-day, or full day.  */}
           </p>
         </div>
 
@@ -394,12 +398,28 @@ const Home: React.FC = () => {
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2 text-[#fdbe1b] " style={{ fontFamily: "DM Sans" }}>Ground Booking</h3>
-              <p className="text-gray-700 text-sm" style={{ fontFamily: "DM Sans" }}>
+              <h3 className="text-xl font-semibold mb-2 text-[#fdbe1b] " style={{ fontFamily: "DM Sans" }}>Cricket Ground & Turf </h3>
+              {/* <p className="text-gray-700 text-sm" style={{ fontFamily: "DM Sans" }}>
                 Available for matches, practice sessions, and multi-day tournaments.
                 Open to academies, schools, clubs, and corporate teams.
                 All bookings are managed digitally via the ZadSports App.
-              </p>
+                . Meticulously prepared turf pitches and outfields, maintained to professional standards<br></br> 
+
+. All-weather drainage systems and practice nets<br></br>  
+
+. Floodlights for evening matches and training sessions<br></br>  
+
+. Seating, pavilion, and amenities for players and spectators 
+              </p> */}
+              <ul className="list-disc list-inside text-gray-700 text-sm space-y-2 mt-4" style={{ fontFamily: "DM Sans" }}>
+  {/* <li>Available for matches, practice sessions, and multi-day tournaments</li>
+  <li>Open to academies, schools, clubs, and corporate teams</li>
+  <li>All bookings are managed digitally via the ZadSports App</li> */}
+  <li>Meticulously prepared turf pitches and outfields, maintained to professional standards</li>
+  <li>All-weather drainage systems and practice nets</li>
+  <li>Floodlights for evening matches and training sessions</li>
+  <li>Seating, pavilion, and amenities for players and spectators</li>
+</ul>
             </div>
           </motion.div>
 
@@ -420,11 +440,25 @@ const Home: React.FC = () => {
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2 text-[#fdbe1b]" style={{ fontFamily: "DM Sans" }}>Team Accommodation</h3>
-              <p className="text-gray-700 text-sm" style={{ fontFamily: "DM Sans" }}>
+              <h3 className="text-xl font-semibold mb-2 text-[#fdbe1b]" style={{ fontFamily: "DM Sans" }}>Tournament & Match Hosting </h3>
+              {/* <p className="text-gray-700 text-sm" style={{ fontFamily: "DM Sans" }}>
                 Free accommodation is provided for teams participating in multi-day tournaments,
                 ensuring a comfortable stay during the event.
-              </p>
+                . Host cricket tournaments of various formats (T20, 30-over, red-ball)<br></br>  
+
+. Organize female cricket tournaments with support in scheduling, umpiring, scoring, and logistics<br></br>  
+
+. Team registration, match scheduling, and ground coordination handled by our experienced staff<br></br>  
+
+. Options for championship finals, league matches, or local friendly tournaments 
+              </p> */}
+              <ul className="list-disc list-inside text-gray-700 text-sm space-y-2" style={{ fontFamily: "DM Sans" }}>
+  {/* <li>Free accommodation is provided for teams participating in multi-day tournaments, ensuring a comfortable stay during the event</li> */}
+  <li>Host cricket tournaments of various formats (T20, 30-over, red-ball)</li>
+  <li>Organize female cricket tournaments with support in scheduling, umpiring, scoring, and logistics</li>
+  <li>Team registration, match scheduling, and ground coordination handled by our experienced staff</li>
+  <li>Options for championship finals, league matches, or local friendly tournaments</li>
+</ul>
             </div>
           </motion.div>
 
@@ -445,11 +479,25 @@ const Home: React.FC = () => {
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2 text-[#fdbe1b]" style={{ fontFamily: "DM Sans" }}>Food Facilities</h3>
-              <p className="text-gray-700 text-sm" style={{ fontFamily: "DM Sans" }} >
-                Meals at ₹500 per person/day including Breakfast, Lunch,
-                Evening Snacks, and Dinner. Prepared hygienically with nutrition in mind.
-              </p>
+              <h3 className="text-xl font-semibold mb-2 text-[#fdbe1b]" style={{ fontFamily: "DM Sans" }}>Accommodation & Food Facilities </h3>
+              {/* <p className="text-gray-700 text-sm" style={{ fontFamily: "DM Sans" }} >
+                 Meals at ₹500 per person/day including Breakfast, Lunch,
+                Evening Snacks, and Dinner. Prepared hygienically with nutrition in mind. 
+                . Comfortable on-site team accommodation with modern amenities<br></br> 
+
+. Nutritious and customized food facilities for players and staff<br></br>  
+
+. Ideal for outstation teams participating in cricket tournaments or long-duration events<br></br>  
+
+. Adds convenience for those booking a Room with cricket ground experience 
+              </p> */}
+              <ul className="list-disc list-inside text-gray-700 text-sm space-y-2" style={{ fontFamily: "DM Sans" }}>
+  <li>Comfortable on-site team accommodation with modern amenities</li>
+  <li>Nutritious and customized food facilities for players and staff</li>
+  <li>Ideal for outstation teams participating in cricket tournaments or long-duration events</li>
+  <li>Adds convenience for those booking a Room with cricket ground experience</li>
+</ul>
+
             </div>
           </motion.div>
         </div>

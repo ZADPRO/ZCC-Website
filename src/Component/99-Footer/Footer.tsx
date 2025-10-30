@@ -12,8 +12,9 @@ const Footer: React.FC = () => {
         <div style={{fontFamily:"DM Sans"}}>
           <h3 className="text-xl font-bold text-[#fdbe1b] mb-4">ZadBy Cricket Club</h3>
           <p className="text-gray-300 text-sm leading-relaxed mb-4">
-            A premium sports ground in Salem, Tamil Nadu the perfect venue for cricket matches,
-            tournaments, and sporting events. Book, manage, and enjoy seamless sporting experiences.
+            A premium sports ground in Salem, Tamil Nadu the perfect venue for cricket tournaments, matches,
+            and sporting events. Book, manage, and enjoy seamless sporting experiences.<br></br>
+            Follow us on social media for announcements on upcoming schedules. 
           </p>
           <div className="flex gap-4 text-[#fdbe1b] text-lg">
             <a href="https://www.facebook.com/profile.php?id=61578385682690" aria-label="Facebook" className="hover:text-white transition">
@@ -48,6 +49,8 @@ const Footer: React.FC = () => {
           <p className="text-gray-300 text-sm"><strong>Phone:</strong> +91 98420 89689 / +91 89719 77840</p>
           <p className="text-gray-300 text-sm"><strong>Email:</strong> info@zadroit.com</p>
           <p className="text-gray-300 text-sm"><strong>Location:</strong> ARRS Academy School Cricket Ground, Salem, Tamil Nadu</p>
+          <p className="text-gray-300 text-sm"><strong>Visit us:</strong> We’re centrally located and easily accessible by road. 
+Use our “Find Nearest Ground” tool to check if we are the cricket ground near me you want to book. </p>
         </div>
 
         {/* Map */}
